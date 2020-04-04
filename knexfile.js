@@ -1,12 +1,12 @@
+require('dotenv/config');
+
 // Update with your config settings.
 
 module.exports = {
 
   development: {
-    client: 'sqlite3',
-    connection: {
-      filename: './src/database/db.sqlite'
-    },
+    client: 'pg',
+    connection: process.env.PG_CONNECTION_STRING,
     migrations: {
       directory: './src/database/migrations'
     },
